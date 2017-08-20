@@ -4,6 +4,7 @@ Support programs for primer design and picking
 * Debian or Ubuntu compatible operating system
 * Perl and Python execution environment
 * Internet connection and wget
+* Compilers, headers and libraries
 ## Assumption of directory structure
 * home directory (~)
 ** bin (command installation path if installPROGRAMS.sh is used)
