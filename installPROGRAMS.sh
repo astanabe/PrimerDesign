@@ -10,6 +10,21 @@ cp ecofind ecogrep ecoisundertaxon ecoPCR $PREFIX/bin/
 make clean
 cd ../tools
 cp *.py $PREFIX/work/
+# Install Claident
+wget -c https://github.com/astanabe/Claident/archive/v0.2.2017.05.22.tar.gz -O Claident-0.2.2017.05.22.tar.gz
+tar -xzf Claident-0.2.2017.05.22.tar.gz
+cd Claident-0.2.2017.05.22
+sh install_on_Debian.sh
+cd ..
+rm -rf Claident-0.2.2017.05.22
+# Install Phylogears2
+wget -c https://github.com/astanabe/Phylogears/archive/v2.0.2016.09.06.tar.gz -O Phylogears-2.0.2016.09.06.tar.gz
+tar -xzf Phylogears-2.0.2016.09.06.tar.gz
+cd Phylogears-2.0.2016.09.06
+make PREFIX=$PREFIX
+make PREFIX=$PREFIX install
+cd ..
+rm -rf Phylogears-2.0.2016.09.06
 # Install VSEARCH
 wget -c https://github.com/torognes/vsearch/releases/download/v2.4.3/vsearch-2.4.3-linux-x86_64.tar.gz
 tar -xzf vsearch-2.4.3-linux-x86_64.tar.gz

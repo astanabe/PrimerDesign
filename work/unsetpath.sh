@@ -1,2 +1,0 @@
-export PATH=$ORIGPATH
-unset ORIGPATH
