@@ -33,5 +33,5 @@ This will install NCBI nt and NCBI Taxonomy dump files.
 ## Enabling installed commands
 Above installer installs commands into ~/bin. Therefore, you need to add this path to PATH environment variable like below.
 ```
-export PATH=/home/username/bin:$PATH
+export PATH=~/bin:$PATH
 ```
