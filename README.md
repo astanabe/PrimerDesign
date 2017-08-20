@@ -7,10 +7,10 @@ Support programs for primer design and picking
 * Compilers, headers and libraries
 ## Assumption of directory structure
 * home directory (~)
-** bin (command installation path if installPROGRAMS.sh is used)
-** blastdb (BLAST database installation path)
-** taxonomy (NCBI Taxonomy dump installation path)
-** work (working directory containing support scripts)
+ * bin (command installation path if installPROGRAMS.sh is used)
+ * blastdb (BLAST database installation path)
+ * taxonomy (NCBI Taxonomy dump installation path)
+ * work (working directory containing support scripts)
 ## How to install
 ### Install required programs
  sh installPROGRAMS.sh
