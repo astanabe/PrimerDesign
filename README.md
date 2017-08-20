@@ -12,12 +12,18 @@ Support programs for primer design and picking
   * taxonomy (NCBI Taxonomy dump installation path)
   * work (working directory containing support scripts)
 ## How to install
+### Download this package
+  mkdir -p temp
+  cd temp
+  wget https://github.com/astanabe/PrimerDesign/archive/master.tar.gz -O PrimerDesign-master.tar.gz
+  tar -xzf PrimerDesign-master.tar.gz
+  cd PrimerDesign-master
 ### Install required programs
- sh installPROGRAMS.sh
+  sh installPROGRAMS.sh
 This will install ecoPCR, Claident, Phylogears2, VSEARCH, EMBOSS, BLAST+ and R.
 ### Install required data
- sh installDB.sh
+  sh installDB.sh
 This will install NCBI nt and NCBI Taxonomy dump files.
 ## Enabling installed commands
 Above installer installs commands into ~/bin. Therefore, you need to add this path to PATH environment variable like below.
- export PATH=/home/username/bin:$PATH
+  export PATH=/home/username/bin:$PATH
