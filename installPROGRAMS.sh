@@ -14,7 +14,9 @@ cp *.py $PREFIX/work/
 wget -c https://github.com/astanabe/Claident/archive/v0.2.2017.05.22.tar.gz -O Claident-0.2.2017.05.22.tar.gz
 tar -xzf Claident-0.2.2017.05.22.tar.gz
 cd Claident-0.2.2017.05.22
-sh install_on_Debian.sh
+make PREFIX=$PREFIX
+make PREFIX=$PREFIX install
+cp $PREFIX/share/claident/.claident ~/.claident
 cd ..
 rm -rf Claident-0.2.2017.05.22
 # Install Phylogears2
