@@ -25,6 +25,26 @@ make PREFIX=$PREFIX
 make PREFIX=$PREFIX install
 cd ..
 rm -rf Phylogears-2.0.2016.09.06
+# Install MAFFT
+wget -c http://mafft.cbrc.jp/alignment/software/mafft-7.310-without-extensions-src.tgz
+tar -xzf mafft-7.310-without-extensions-src.tgz
+cd mafft-7.310-without-extensions/core
+perl -i -npe "s/^PREFIX = \\S+/PREFIX = \$ENV{\"PREFIX\"}/" Makefile
+make -j4
+make install
+cd ../..
+rm -rf mafft-7.310-without-extensions
+# Install Primer3
+wget -c -O primer3-2.3.7.tar.gz https://sourceforge.net/projects/primer3/files/primer3/2.3.7/primer3-2.3.7.tar.gz/download
+tar -xzf primer3-2.3.7.tar.gz
+cd primer3-2.3.7/src
+perl -i -npe "s/\\/opt\\/primer3_config/\$ENV{\"PREFIX\"}\\/bin\\/primer3_config/" primer3_boulder_main.c
+perl -i -npe "s/\\/opt\\/primer3_config/\$ENV{\"PREFIX\"}\\/bin\\/primer3_config/" thal_main.c
+make -j4
+cp long_seq_tm_test ntdpal ntthal oligotm primer3_core $PREFIX/bin/
+cp -R primer3_config $PREFIX/bin/
+cd ../..
+rm -rf primer3-2.3.7
 # Install VSEARCH
 wget -c https://github.com/torognes/vsearch/releases/download/v2.4.3/vsearch-2.4.3-linux-x86_64.tar.gz
 tar -xzf vsearch-2.4.3-linux-x86_64.tar.gz
