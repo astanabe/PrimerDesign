@@ -7,9 +7,10 @@ tar -xzf ecoPCR-0.8.0.tar.gz
 cd ecoPCR-0.8.0/src
 make -j4
 cp ecofind ecogrep ecoisundertaxon ecoPCR $PREFIX/bin/
-make clean
 cd ../tools
 cp *.py $PREFIX/work/
+cd ../..
+rm -rf ecoPCR-0.8.0
 # Install Claident
 wget -c https://github.com/astanabe/Claident/archive/v0.2.2017.05.22.tar.gz -O Claident-0.2.2017.05.22.tar.gz
 tar -xzf Claident-0.2.2017.05.22.tar.gz
@@ -74,7 +75,7 @@ rm -rf ncbi-blast-2.6.0+
 wget -c https://cran.r-project.org/src/base/R-3/R-3.4.1.tar.gz
 tar -xzf R-3.4.1.tar.gz
 cd R-3.4.1
-./configure --prefix=$PREFIX
+./configure --prefix=$PREFIX --without-x
 make -j4
 make install
 cd ..
