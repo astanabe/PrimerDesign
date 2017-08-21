@@ -8,6 +8,7 @@ rm gi_taxid_nucl.dmp.gz.md5 || exit $?
 gzip -d gi_taxid_nucl.dmp.gz || exit $?
 wget -c ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz || exit $?
 wget -c ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz.md5 || exit $?
+md5sum -c taxdump.tar.gz.md5 || exit $?
 tar -xzf taxdump.tar.gz || exit $?
 chmod 644 taxdump.tar.gz || exit $?
 rm taxdump.tar.gz || exit $?
