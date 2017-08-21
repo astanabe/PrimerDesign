@@ -1,4 +1,4 @@
-PREFIX=`dirname ~`/`basename ~`
+export PREFIX=`dirname ~`/`basename ~`
 # Make directories
 mkdir -p $PREFIX/bin
 cp -R ./work $PREFIX/
