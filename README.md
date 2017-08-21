@@ -14,12 +14,15 @@ Support programs for primer design and picking
 ## How to install
 ### Download this package
 ```
-mkdir -p temp
-cd temp
 wget https://github.com/astanabe/PrimerDesign/archive/master.tar.gz -O PrimerDesign-master.tar.gz
 tar -xzf PrimerDesign-master.tar.gz
 cd PrimerDesign-master
 ```
+### Install dependent packages
+```
+sh installDEPS.sh
+```
+This requires sudo password to execute.
 ### Install required programs
 ```
 sh installPROGRAMS.sh
