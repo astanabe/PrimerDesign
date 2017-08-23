@@ -6,6 +6,7 @@ cp -R ./work $PREFIX/ || exit $?
 tar -xzf ecoPCR-0.8.0.tar.gz || exit $?
 cd ecoPCR-0.8.0/src || exit $?
 make -j4 || exit $?
+make ecoisundertaxon || exit $?
 cp ecofind ecogrep ecoisundertaxon ecoPCR $PREFIX/bin/ || exit $?
 cd ../tools || exit $?
 cp *.py $PREFIX/work/ || exit $?
