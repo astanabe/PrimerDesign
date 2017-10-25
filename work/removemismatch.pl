@@ -43,7 +43,7 @@ if ($output !~ /^raw$/i && $output !~ /^fasta$/i) {
 	&errorMessage(__LINE__, 'Output option is invalid.');
 }
 
-while (<>) {
+while (<STDIN>) {
 	unless (/^#/) {
 		my @entry = split(/ +\| +/);
 		if (!$inverse && &pass($forwardprimer, $entry[13]) && &pass($reverseprimer, $entry[16]) || $inverse && (!&pass($forwardprimer, $entry[13]) || !&pass($reverseprimer, $entry[16]))) {
