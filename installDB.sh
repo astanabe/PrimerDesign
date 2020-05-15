@@ -15,12 +15,12 @@ rm taxdump.tar.gz || exit $?
 # NCBI nt
 mkdir -p ~/blastdb || exit $?
 cd ~/blastdb || exit $?
-wget -c ftp://ftp.ncbi.nih.gov/blast/db/nt.??.tar.gz || exit $?
-wget -c ftp://ftp.ncbi.nih.gov/blast/db/nt.??.tar.gz.md5 || exit $?
-ls nt.??.tar.gz.md5 | xargs -L 1 -P 4 md5sum -c || exit $?
-rm nt.??.tar.gz.md5 || exit $?
-wget -c ftp://ftp.ncbi.nih.gov/blast/db/taxdb.tar.gz || exit $?
-wget -c ftp://ftp.ncbi.nih.gov/blast/db/taxdb.tar.gz.md5 || exit $?
+wget -c ftp://ftp.ncbi.nih.gov/blast/db/v4/nt_v4.??.tar.gz || exit $?
+wget -c ftp://ftp.ncbi.nih.gov/blast/db/v4/nt_v4.??.tar.gz.md5 || exit $?
+ls nt_v4.??.tar.gz.md5 | xargs -L 1 -P 4 md5sum -c || exit $?
+rm nt_v4.??.tar.gz.md5 || exit $?
+wget -c ftp://ftp.ncbi.nih.gov/blast/db/v4/taxdb.tar.gz || exit $?
+wget -c ftp://ftp.ncbi.nih.gov/blast/db/v4/taxdb.tar.gz.md5 || exit $?
 md5sum -c taxdb.tar.gz.md5 || exit $?
 rm taxdb.tar.gz.md5 || exit $?
 ls *.tar.gz | xargs -L 1 -P 4 tar -xzf || exit $?
